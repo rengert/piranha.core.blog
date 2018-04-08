@@ -1,0 +1,13 @@
+@model Blog.Models.StandardPage
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-10">
+            <h1>@Model.Title</h1>
+            @Html.Raw(Model.Body)
+        </div>
+    </div>
+</div>
