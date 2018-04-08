@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Piranha;
 
@@ -10,15 +11,28 @@ namespace Blog.Pages
 
         public Models.BlogArchive Data { get; private set; }
 
-        public string BlogLink {
-            get {
+        public string BlogLink 
+        {
+            get 
+            {
                 return Data.Permalink
                     + (Data.Archive.Category != null ? $"/category/{Data.Archive.Category.Slug}"  : "")
                     + (Data.Archive.Year.HasValue ? $"/{Data.Archive.Year}" : "" )
                     + (Data.Archive.Month.HasValue ? $"/{Data.Archive.Month}" : "");
             }
-        }        
+        }
 
+        public string MonthName
+        {
+            get 
+            {
+                if (Data.Archive.Month.HasValue)
+                    return new DateTime(2018, Data.Archive.Month.Value, 1) .ToString("MMMM", CultureInfo.InvariantCulture);
+                return "";
+
+            }
+        }
+        
         public Archive(IApi api)
         {
             _api = api;

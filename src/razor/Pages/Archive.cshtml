@@ -6,6 +6,26 @@
 }
 
 <div class="container archive">
+    @if (Model.Data.Archive.Category != null) {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Category: @Model.Data.Archive.Category.Title</h1>
+            </div>
+        </div>
+    } else if (Model.Data.Archive.Year.HasValue) {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Posts from @Model.MonthName @Model.Data.Archive.Year</h1>
+            </div>
+        </div>        
+    } else {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Latest posts</h1>
+            </div>
+        </div>        
+    }
+
     @foreach (var post in Model.Data.Archive.Posts) 
     {
         <article>

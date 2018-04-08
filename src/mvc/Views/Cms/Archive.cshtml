@@ -1,4 +1,5 @@
 @model Blog.Models.BlogArchive
+@using System.Globalization
 @inject Piranha.IApi Api
 @{
     ViewBag.Title = Model.Title;
@@ -9,9 +10,36 @@
             + (Model.Archive.Year.HasValue ? $"/{Model.Archive.Year}" : "" )
             + (Model.Archive.Month.HasValue ? $"/{Model.Archive.Month}" : "");
     };
+
+    Func<string> MonthName = () => {
+        if (Model.Archive.Month.HasValue) {
+            return new DateTime(2018, Model.Archive.Month.Value, 1) .ToString("MMMM", CultureInfo.InvariantCulture);
+        }
+        return "";
+    };
 }
 
 <div class="container archive">
+    @if (Model.Archive.Category != null) {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Category: @Model.Archive.Category.Title</h1>
+            </div>
+        </div>
+    } else if (Model.Archive.Year.HasValue) {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Posts from @MonthName() @Model.Archive.Year</h1>
+            </div>
+        </div>        
+    } else {
+        <div class="row">
+            <div class="col-sm-12 blog-filter-header">
+                <h1>Latest posts</h1>
+            </div>
+        </div>        
+    }
+
     @foreach (var post in Model.Archive.Posts) 
     {
         <article>
