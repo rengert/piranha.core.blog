@@ -38,9 +38,14 @@ namespace Blog.Pages
             _api = api;
         }
 
-        public void OnGet(Guid id, int? year = null, int? month = null, int? page = null, Guid? category = null)
+        public void OnGet(Guid id, int? year = null, int? month = null, int? page = null, Guid? category = null, Guid? tag = null)
         {
-            Data = _api.Archives.GetById<Models.BlogArchive>(id, page, category, year, month);
+            if (category.HasValue)
+                Data = _api.Archives.GetByCategoryId<Models.BlogArchive>(id, category.Value, page, year, month);
+            else if (tag.HasValue)
+                Data = _api.Archives.GetByTagId<Models.BlogArchive>(id, tag.Value, page, year, month);
+            else Data = _api.Archives.GetById<Models.BlogArchive>(id, page, year, month);
+
             ViewData["CurrentPage"] = Data.Id;
         }
     }        

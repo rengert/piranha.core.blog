@@ -143,9 +143,14 @@ footer {
 }
 
 article {
+    img {
+        margin-bottom: 1rem;
+    }
+
     header {
         img {
             border-radius: .5rem;
+            margin: 0;
         }
     }
 
