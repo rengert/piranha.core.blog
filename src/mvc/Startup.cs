@@ -23,12 +23,9 @@ namespace Blog
             {
                 config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
             });
-            services.AddDbContext<Db>(options =>
-                options.UseSqlite("Filename=./piranha.db"));            
-            services.AddSingleton<IStorage, FileStorage>();
-            services.AddSingleton<IImageProcessor, ImageSharpProcessor>();
-            services.AddScoped<IDb, Db>();
-            services.AddScoped<IApi, Api>();
+            services.AddPiranhaFileStorage();
+            services.AddPiranhaImageSharp();
+            services.AddPiranhaEF(options => options.UseSqlite("Filename=./piranha.coreweb.db"));
             services.AddPiranhaSimpleSecurity(
                 new Piranha.AspNetCore.SimpleUser(Piranha.Manager.Permission.All()) 
                 {

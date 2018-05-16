@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
+using Piranha.Extend.Blocks;
 using System;
 
 namespace Blog.Controllers
@@ -37,6 +38,8 @@ namespace Blog.Controllers
                 });
             }
 
+            var media = api.Media.GetById(bannerId);
+
             // Add the blog archive
             var blogId = Guid.NewGuid();
             var blogPage = Models.BlogArchive.Create(api);
@@ -58,9 +61,11 @@ namespace Blog.Controllers
             post.Title = "Dapibus Cursus Justo";
             post.MetaKeywords = "Nullam, Mollis, Cras, Sem, Ipsum";
             post.MetaDescription = "Aenean lacinia bibendum nulla sed consectetur.";
-            post.Body = "Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.";
             post.Heading.PrimaryImage = bannerId;
             post.Heading.Ingress = "Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.";
+            post.Blocks.Add(new HtmlBlock {
+                Body = "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>"
+            });
             post.Published = DateTime.Now;
             api.Posts.Save(post);
             
@@ -72,27 +77,41 @@ namespace Blog.Controllers
             post.Title = "Fringilla Aenean Commodo";
             post.MetaKeywords = "Mattis, Tristique, Parturient, Fringilla";
             post.MetaDescription = "Aenean lacinia bibendum nulla sed consectetur.";
-            post.Body = 
-                "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.\n\n" +
-                "> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\n" +
-                "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.\n\n" + 
-                "* Fringilla Adipiscing Nibh\n" +
-                "* Porta Condimentum\n" +
-                "* Ullamcorper Nullam\n" +
-                "* Dapibus Ornare\n\n" +
-                "Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.\n\n" +
-                "1. Dapibus Egestas Risus\n" +
-                "2. Sit Nibh\n" +
-                "3. Justo Mollis\n" +
-                "4. Vestibulum Pellentesque\n\n" +
-                "Curabitur blandit tempus porttitor. Donec sed odio dui. Maecenas faucibus `mollis interdum`. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Nullam **id dolor** id nibh ultricies vehicula ut id elit.\n\n" +
-                "    Sem Ipsum Fermentum {\n" +
-                "        Sem Condimentum\n" +
-                "        Ridiculus Quam Ornare\n" +
-                "    }\n\n" +
-                "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n";
             post.Heading.PrimaryImage = bannerId;
             post.Heading.Ingress = "Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.";
+            post.Blocks.Add(new HtmlBlock {
+                Body = "<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>"
+            });
+            post.Blocks.Add(new QuoteBlock {
+                Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+            });
+            post.Blocks.Add(new HtmlBlock {
+                Body = "<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>" +
+                    "<ul>" +
+                    "  <li>Fringilla Adipiscing Nibh</li>" +
+                    "  <li>Porta Condimentum</li>" +
+                    "  <li>Ullamcorper Nullam</li>" +
+                    "  <li>Dapibus Ornare</li>" +
+                    "</ul>"
+            });
+            post.Blocks.Add(new HtmlBlock {
+                Body = "<p>Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>" +
+                    "<ol>" +
+                    "  <li>Dapibus Egestas Risus</li>" +
+                    "  <li>Sit Nibh</li>" +
+                    "  <li>Justo Mollis</li>" +
+                    "  <li>Vestibulum Pellentesque</li>" +
+                    "</ol>"
+            });
+            post.Blocks.Add(new HtmlBlock {
+                Body =
+                    "<pre><code>" +
+                    "    Sem Ipsum Fermentum {\n" +
+                    "        Sem Condimentum\n" +
+                    "        Ridiculus Quam Ornare\n" +
+                    "    }" +
+                    "</code></pre>"
+            });
             post.Published = DateTime.Now;
             api.Posts.Save(post);
 
@@ -103,7 +122,16 @@ namespace Blog.Controllers
             page.Title = "About Me";
             page.MetaKeywords = "Inceptos, Tristique, Pellentesque, Lorem, Vestibulum";
             page.MetaDescription = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros.";
-            page.Body = "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.";
+            page.Blocks.Add(new HtmlBlock {
+                Body = "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla.</p>"
+            });
+            page.Blocks.Add(new QuoteBlock {
+                Body = "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod."
+            });
+            page.Blocks.Add(new HtmlColumnBlock {
+                Column1 = $"<p><img src=\"{media.PublicUrl.Replace("~", "")}\"></p>",
+                Column2 = "<p>Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>"
+            });
             page.Published = DateTime.Now;
             api.Pages.Save(page);
 

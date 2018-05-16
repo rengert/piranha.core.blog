@@ -22,19 +22,25 @@
 <div class="container archive">
     @if (Model.Archive.Category != null) {
         <div class="row">
-            <div class="col-sm-12 blog-filter-header">
+            <div class="col blog-filter-header">
                 <h1>Category: @Model.Archive.Category.Title</h1>
+            </div>
+        </div>
+    } else if (Model.Archive.Tag != null) {
+        <div class="row">
+            <div class="col blog-filter-header">
+                <h1>Tag: @Model.Archive.Tag.Title</h1>
             </div>
         </div>
     } else if (Model.Archive.Year.HasValue) {
         <div class="row">
-            <div class="col-sm-12 blog-filter-header">
+            <div class="col blog-filter-header">
                 <h1>Posts from @MonthName() @Model.Archive.Year</h1>
             </div>
         </div>        
     } else {
         <div class="row">
-            <div class="col-sm-12 blog-filter-header">
+            <div class="col blog-filter-header">
                 <h1>Latest posts</h1>
             </div>
         </div>        

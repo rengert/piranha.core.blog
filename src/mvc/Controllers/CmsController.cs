@@ -6,14 +6,15 @@ namespace Blog.Controllers
 {
     public class CmsController : Controller
     {
-        private readonly IApi api;
+        private readonly IApi _api;
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         /// <param name="api">The current api</param>
-        public CmsController(IApi api) {
-            this.api = api;
+        public CmsController(IApi api) 
+        {
+            _api = api;
         }
 
         /// <summary>
@@ -24,10 +25,21 @@ namespace Blog.Controllers
         /// <param name="month">The optional month</param>
         /// <param name="page">The optional page</param>
         /// <param name="category">The optional category</param>
+        /// <param name="tag">The optional tag</param>
         [Route("archive")]
-        public IActionResult Archive(Guid id, int? year = null, int? month = null, int? page = null, Guid? category = null) {
-            var model = api.Archives.GetById<Models.BlogArchive>(id, page, category, year, month);
+        public IActionResult Archive(Guid id, int? year = null, int? month = null, int? page = null, 
+            Guid? category = null, Guid? tag = null) 
+        {
+            Models.BlogArchive model;
+
+            if (category.HasValue)
+                model = _api.Archives.GetByCategoryId<Models.BlogArchive>(id, category.Value, page, year, month);
+            else if (tag.HasValue)
+                model = _api.Archives.GetByTagId<Models.BlogArchive>(id, tag.Value, page, year, month);
+            else model = _api.Archives.GetById<Models.BlogArchive>(id, page, year, month);
+            
             ViewBag.CurrentPage = model.Id;
+            // ViewBag.SiteId = (Guid)HttpContext.Items["Piranha_SiteId"];
 
             return View(model);
         }
@@ -37,8 +49,9 @@ namespace Blog.Controllers
         /// </summary>
         /// <param name="id">The unique page id</param>
         [Route("page")]
-        public IActionResult Page(Guid id) {
-            var model = api.Pages.GetById<Models.StandardPage>(id);
+        public IActionResult Page(Guid id) 
+        {
+            var model = _api.Pages.GetById<Models.StandardPage>(id);
             ViewBag.CurrentPage = model.Id;
 
             return View(model);
@@ -49,8 +62,9 @@ namespace Blog.Controllers
         /// </summary>
         /// <param name="id">The unique post id</param>
         [Route("post")]
-        public IActionResult Post(Guid id) {
-            var model = api.Posts.GetById<Models.BlogPost>(id);
+        public IActionResult Post(Guid id) 
+        {
+            var model = _api.Posts.GetById<Models.BlogPost>(id);
             ViewBag.CurrentPage = model.BlogId;
 
             return View(model);
