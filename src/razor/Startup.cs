@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Piranha;
+using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.ImageSharp;
 using Piranha.Local;
 
@@ -35,13 +36,7 @@ namespace Blog
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
             services.AddPiranhaEF(options => options.UseSqlite("Filename=./piranha.coreweb.db"));
-            services.AddPiranhaSimpleSecurity(
-                new Piranha.AspNetCore.SimpleUser(Piranha.Manager.Permission.All()) 
-                {
-                    UserName = "admin",
-                    Password = "password"
-                }
-            );
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => options.UseSqlite("Filename=./piranha.blog.db"));
             services.AddPiranhaManager();
  
            return services.BuildServiceProvider();
@@ -73,7 +68,7 @@ namespace Blog
             // Register middleware
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UsePiranhaSimpleSecurity();
+            app.UseAuthentication();
             app.UsePiranha();
             app.UsePiranhaManager();
 

@@ -6,13 +6,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
-    <PackageReference Include="Piranha" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.AspNetCore" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.AspNetCore.SimpleSecurity" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.AttributeBuilder" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.ImageSharp" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.Local.FileStorage" Version="5.0.0-alpha1" />
-    <PackageReference Include="Piranha.Manager" Version="5.0.0-alpha1" />
+    <PackageReference Include="Piranha" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.AspNetCore" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.AttributeBuilder" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.ImageSharp" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.Local.FileStorage" Version="5.0.0-beta1" />
+    <PackageReference Include="Piranha.Manager" Version="5.0.0-beta1" />
   </ItemGroup>
 
   <ItemGroup>
