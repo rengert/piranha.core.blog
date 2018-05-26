@@ -26,8 +26,10 @@ namespace Blog
             });
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
-            services.AddPiranhaEF(options => options.UseSqlite("Filename=./piranha.blog.db"));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => options.UseSqlite("Filename=./piranha.blog.db"));
+            services.AddPiranhaEF(options => 
+                options.UseSqlite("Filename=./piranha.blog.db"));
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => 
+                options.UseSqlite("Filename=./piranha.blog.db"));
             services.AddPiranhaManager();
 
             return services.BuildServiceProvider();

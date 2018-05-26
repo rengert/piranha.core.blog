@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Piranha.Blog.CSharp</id>
+    <version>5.0.0</version>
+    <title>Piranha CMS Blog Template</title>
+    <authors>Håkan Edling</authors>
+    <owners>Håkan Edling</owners>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>    
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://github.com/piranhacms/piranha.core</projectUrl>
+    <iconUrl>http://piranhacms.org/assets/twitter-shield.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Piranha CMS Blog Template</description>
+    <releaseNotes>
+      See the changelog available at:
+      https://github.com/piranhacms/piranha.core/wiki/changelog
+    </releaseNotes>
+    <copyright>Copyright 2018 (c) Håkan Edling</copyright>
+    <tags>cms mvc aspnetcore netstandard</tags>
+  </metadata>
+  <files>
+    <file src="content\wwwroot\_._" target="content\wwwroot\_._" />
+    <file src="..\src\mvc\.template.config\template.json" target="content\.template.config\template.json" />
+    <file src="..\src\mvc\assets\scss\base.scss" target="content\assets\scss\base.scss" />
+    <file src="..\src\mvc\assets\scss\colors.scss" target="content\assets\scss\colors.scss" />
+    <file src="..\src\mvc\assets\scss\style.scss" target="content\assets\scss\style.scss" />
+    <file src="..\src\mvc\assets\scss\type.scss" target="content\assets\scss\type.scss" />
+    <file src="..\src\mvc\Controllers\CmsController.cs" target="content\Controllers\CmsController.cs" />
+    <file src="..\src\mvc\Controllers\SetupController.cs" target="content\Controllers\SetupController.cs" />
+    <file src="..\src\mvc\Models\Regions\Heading.cs" target="content\Models\Regions\Heading.cs" />
+    <file src="..\src\mvc\Models\BlogArchive.cs" target="content\Models\BlogArchive.cs" />
+    <file src="..\src\mvc\Models\BlogPost.cs" target="content\Models\BlogPost.cs" />
+    <file src="..\src\mvc\Models\StandardPage.cs" target="content\Models\StandardPage.cs" />
+    <file src="..\src\mvc\seed\pexels-photo-355423.jpeg" target="content\seed\pexels-photo-355423.jpeg" />
+    <file src="..\src\mvc\Views\Cms\DisplayTemplates\HtmlBlock.cshtml" target="content\Views\Cms\DisplayTemplates\HtmlBlock.cshtml" />
+    <file src="..\src\mvc\Views\Cms\DisplayTemplates\HtmlColumnBlock.cshtml" target="content\Views\Cms\DisplayTemplates\HtmlColumnBlock.cshtml" />
+    <file src="..\src\mvc\Views\Cms\DisplayTemplates\ImageBlock.cshtml" target="content\Views\Cms\DisplayTemplates\ImageBlock.cshtml" />
+    <file src="..\src\mvc\Views\Cms\DisplayTemplates\QuoteBlock.cshtml" target="content\Views\Cms\DisplayTemplates\QuoteBlock.cshtml" />
+    <file src="..\src\mvc\Views\Cms\DisplayTemplates\TextBlock.cshtml" target="content\Views\Cms\DisplayTemplates\TextBlock.cshtml" />
+    <file src="..\src\mvc\Views\Cms\Archive.cshtml" target="content\Views\Cms\Archive.cshtml" />
+    <file src="..\src\mvc\Views\Cms\Page.cshtml" target="content\Views\Cms\Page.cshtml" />
+    <file src="..\src\mvc\Views\Cms\Post.cshtml" target="content\Views\Cms\Post.cshtml" />
+    <file src="..\src\mvc\Views\Setup\Index.cshtml" target="content\Views\Setup\Index.cshtml" />
+    <file src="..\src\mvc\Views\Shared\Partial\_Menu.cshtml" target="content\Views\Shared\Partial\_Menu.cshtml" />
+    <file src="..\src\mvc\Views\Shared\Partial\_Meta.cshtml" target="content\Views\Shared\Partial\_Meta.cshtml" />
+    <file src="..\src\mvc\Views\Shared\_Layout.cshtml" target="content\Views\Shared\_Layout.cshtml" />
+    <file src="..\src\mvc\Views\_ViewStart.cshtml" target="content\Views\_ViewStart.cshtml" />
+    <file src="..\src\mvc\wwwroot\css\style.css" target="content\wwwroot\css\style.css" />
+    <file src="..\src\mvc\wwwroot\css\style.min.css" target="content\wwwroot\css\style.min.css" />
+    <file src="..\src\mvc\wwwroot\img\github.png" target="content\wwwroot\img\github.png" />
+    <file src="..\src\mvc\wwwroot\img\linkedin.png" target="content\wwwroot\img\linkedin.png" />
+    <file src="..\src\mvc\wwwroot\img\logo.png" target="content\wwwroot\img\logo.png" />
+    <file src="..\src\mvc\wwwroot\img\twitter.png" target="content\wwwroot\img\twitter.png" />
+    <file src="..\src\mvc\Blog.csproj" target="content\Blog.csproj" />
+    <file src="..\src\mvc\compilerconfig.json" target="content\compilerconfig.json" />
+    <file src="..\src\mvc\compilerconfig.json.defaults" target="content\compilerconfig.json.defaults" />
+    <file src="..\src\mvc\gulpfile.js" target="content\gulpfile.js" />
+    <file src="..\src\mvc\package.json" target="content\package.json" />
+    <file src="..\src\mvc\Program.cs" target="content\Program.cs" />
+    <file src="..\src\mvc\Startup.cs" target="content\Startup.cs" />
+  </files>
+</package>

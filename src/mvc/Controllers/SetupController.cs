@@ -62,7 +62,7 @@ namespace Blog.Controllers
             post.MetaKeywords = "Nullam, Mollis, Cras, Sem, Ipsum";
             post.MetaDescription = "Aenean lacinia bibendum nulla sed consectetur.";
             post.Heading.PrimaryImage = bannerId;
-            post.Heading.Ingress = "Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.";
+            post.Heading.Ingress = "<p>Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.</p>";
             post.Blocks.Add(new HtmlBlock {
                 Body = "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>"
             });
@@ -78,7 +78,7 @@ namespace Blog.Controllers
             post.MetaKeywords = "Mattis, Tristique, Parturient, Fringilla";
             post.MetaDescription = "Aenean lacinia bibendum nulla sed consectetur.";
             post.Heading.PrimaryImage = bannerId;
-            post.Heading.Ingress = "Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.";
+            post.Heading.Ingress = "<p>Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.</p>";
             post.Blocks.Add(new HtmlBlock {
                 Body = "<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>"
             });

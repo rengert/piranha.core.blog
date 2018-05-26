@@ -9,6 +9,6 @@ namespace Blog.Models.Regions
         public ImageField PrimaryImage { get; set; }
 
         [Field]
-        public MarkdownField Ingress { get; set; }
+        public HtmlField Ingress { get; set; }
     }
 }
