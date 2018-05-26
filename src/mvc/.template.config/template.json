@@ -3,10 +3,10 @@
   "author": "Håkan Edling",
   "classifications": [ "Web", "MVC", "CMS" ],
   "identity": "Piranha.Blog.CSharp",
-  "name": "ASP.NET Core with Piranha CMS Blog",
+  "name": "ASP.NET Core Blog with Piranha CMS",
   "tags": {
     "language": "C#"
   },
   "shortName": "piranha.blog",
-  "sourceName": "Blog"
+  "sourceName": "BlogTemplate"
 }

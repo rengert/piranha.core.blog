@@ -12,7 +12,7 @@ using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.ImageSharp;
 using Piranha.Local;
 
-namespace Blog
+namespace BlogTemplate
 {
     public class Startup
     {

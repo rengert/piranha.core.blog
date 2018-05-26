@@ -3,7 +3,7 @@ using Piranha;
 using Piranha.Extend.Blocks;
 using System;
 
-namespace Blog.Controllers
+namespace BlogTemplate.Controllers
 {
     /// <summary>
     /// This controller is only used when the project is first started

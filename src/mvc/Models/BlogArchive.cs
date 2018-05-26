@@ -1,7 +1,7 @@
 using Piranha.AttributeBuilder;
 using Piranha.Models;
 
-namespace Blog.Models
+namespace BlogTemplate.Models
 {
     [PageType(Title = "Blog archive", UseBlocks = false)]
     public class BlogArchive  : BlogPage<BlogArchive>

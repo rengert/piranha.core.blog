@@ -1,7 +1,7 @@
 using Piranha.AttributeBuilder;
 using Piranha.Extend.Fields;
 
-namespace Blog.Models.Regions
+namespace BlogTemplate.Models.Regions
 {
     public class Heading
     {

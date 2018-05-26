@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mvc", "mvc", "{756EFA62-D43
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "razor", "razor", "{48195324-31FD-40FA-B741-A226185C8C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "mvc\Blog.csproj", "{E5F06CF6-C2AA-4BDB-A0DE-402621DBFF92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogTemplate", "mvc\BlogTemplate.csproj", "{E5F06CF6-C2AA-4BDB-A0DE-402621DBFF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "razor\Blog.csproj", "{09F71C93-26E5-497B-B5FA-99D7ECF8BC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog", "razor\Blog.csproj", "{09F71C93-26E5-497B-B5FA-99D7ECF8BC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E5F06CF6-C2AA-4BDB-A0DE-402621DBFF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +46,14 @@ Global
 		{09F71C93-26E5-497B-B5FA-99D7ECF8BC7A}.Release|x86.ActiveCfg = Release|Any CPU
 		{09F71C93-26E5-497B-B5FA-99D7ECF8BC7A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5F06CF6-C2AA-4BDB-A0DE-402621DBFF92} = {756EFA62-D433-45B9-8F48-FB86BCAAAC33}
 		{09F71C93-26E5-497B-B5FA-99D7ECF8BC7A} = {48195324-31FD-40FA-B741-A226185C8C80}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42BDE716-ECC6-4AA8-B271-849BA8763D2F}
 	EndGlobalSection
 EndGlobal

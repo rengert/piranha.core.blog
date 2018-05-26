@@ -2,7 +2,7 @@
 using Piranha;
 using System;
 
-namespace Blog.Controllers
+namespace BlogTemplate.Controllers
 {
     public class CmsController : Controller
     {

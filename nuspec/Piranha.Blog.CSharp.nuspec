@@ -48,13 +48,13 @@
     <file src="..\src\mvc\Views\Shared\Partial\_Meta.cshtml" target="content\Views\Shared\Partial\_Meta.cshtml" />
     <file src="..\src\mvc\Views\Shared\_Layout.cshtml" target="content\Views\Shared\_Layout.cshtml" />
     <file src="..\src\mvc\Views\_ViewStart.cshtml" target="content\Views\_ViewStart.cshtml" />
-    <file src="..\src\mvc\wwwroot\css\style.css" target="content\wwwroot\css\style.css" />
-    <file src="..\src\mvc\wwwroot\css\style.min.css" target="content\wwwroot\css\style.min.css" />
-    <file src="..\src\mvc\wwwroot\img\github.png" target="content\wwwroot\img\github.png" />
-    <file src="..\src\mvc\wwwroot\img\linkedin.png" target="content\wwwroot\img\linkedin.png" />
-    <file src="..\src\mvc\wwwroot\img\logo.png" target="content\wwwroot\img\logo.png" />
-    <file src="..\src\mvc\wwwroot\img\twitter.png" target="content\wwwroot\img\twitter.png" />
-    <file src="..\src\mvc\Blog.csproj" target="content\Blog.csproj" />
+    <file src="..\src\mvc\wwwroot\assets\css\style.css" target="content\wwwroot\assets\css\style.css" />
+    <file src="..\src\mvc\wwwroot\assets\css\style.min.css" target="content\wwwroot\assets\css\style.min.css" />
+    <file src="..\src\mvc\wwwroot\assets\img\github.png" target="content\wwwroot\assets\img\github.png" />
+    <file src="..\src\mvc\wwwroot\assets\img\linkedin.png" target="content\wwwroot\assets\img\linkedin.png" />
+    <file src="..\src\mvc\wwwroot\assets\img\logo.png" target="content\wwwroot\assets\img\logo.png" />
+    <file src="..\src\mvc\wwwroot\assets\img\twitter.png" target="content\wwwroot\assets\img\twitter.png" />
+    <file src="..\src\mvc\BlogTemplate.csproj" target="content\BlogTemplate.csproj" />
     <file src="..\src\mvc\compilerconfig.json" target="content\compilerconfig.json" />
     <file src="..\src\mvc\compilerconfig.json.defaults" target="content\compilerconfig.json.defaults" />
     <file src="..\src\mvc\gulpfile.js" target="content\gulpfile.js" />

@@ -2,7 +2,7 @@ using Piranha.AttributeBuilder;
 using Piranha.Extend.Fields;
 using Piranha.Models;
 
-namespace Blog.Models
+namespace BlogTemplate.Models
 {
     [PostType(Title = "Blog post")]
     public class BlogPost : Post<BlogPost>
